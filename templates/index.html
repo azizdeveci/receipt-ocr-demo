@@ -1,0 +1,13 @@
+<form method="POST" enctype="multipart/form-data">
+    <select name="market">
+        <option value="happy">Happy Center</option>
+        <option value="other">Diğer</option>
+    </select>
+
+    <input type="file" name="file" required>
+    <button>Fişi Oku</button>
+</form>
+
+{% if parsed %}
+<pre>{{ parsed | tojson(indent=2) }}</pre>
+{% endif %}

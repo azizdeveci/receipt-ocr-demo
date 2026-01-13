@@ -1,0 +1,11 @@
+{
+  "name": "@azizdeveci/receipt_ocr_demo",
+  "version": "1.0.0",
+  "description": "OCR-based receipt parsing demo",
+  "main": "index.js",
+  "type": "module",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "license": "MIT"
+}

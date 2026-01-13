@@ -1,0 +1,70 @@
+body {
+    background: #0f172a;
+    font-family: Arial, sans-serif;
+    color: #e5e7eb;
+}
+
+.container {
+    width: 600px;
+    margin: 60px auto;
+    background: #020617;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+select, input[type=file], button {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+button {
+    background: #22c55e;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+.receipt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.receipt-table th,
+.receipt-table td {
+    padding: 10px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.day-total {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #22c55e;
+}
+
+.reset-box {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.reset-box a {
+    color: #f87171;
+    text-decoration: none;
+}
