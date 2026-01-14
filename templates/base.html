@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Receipt OCR Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="app-container">
+
+    <header class="app-header">
+        <h1>🧾 Receipt OCR Engine</h1>
+        <p>Daily Cash & Receipt Analysis</p>
+    </header>
+
+    <main class="app-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="app-footer">
+        <span>Python • OCR • Flask • Semantic Parsing</span>
+    </footer>
+
+</div>
+
+</body>
+</html>

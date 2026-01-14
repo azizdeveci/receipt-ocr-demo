@@ -1,13 +1,49 @@
-<form method="POST" enctype="multipart/form-data">
-    <select name="market">
-        <option value="happy">Happy Center</option>
-        <option value="other">Diğer</option>
-    </select>
+{% extends "base.html" %}
+{% block content %}
 
-    <input type="file" name="file" required>
-    <button>Fişi Oku</button>
-</form>
+<section class="upload-section">
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="receipt" required>
+        <button type="submit" class="btn-primary">
+            ➕ Fiş Ekle
+        </button>
+    </form>
+</section>
+
+{% if receipts %}
+<section class="card">
+    <h3>🧾 Günlük Fişler</h3>
+
+    <table class="receipt-table">
+        <tr>
+            <th>Fiş No</th>
+            <th>Total (TL)</th>
+        </tr>
+        {% for r in receipts %}
+        <tr>
+            <td>{{ r.receipt_no }}</td>
+            <td>{{ "%.2f"|format(r.total) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="day-total">
+        Gün Sonu Toplamı:
+        <span>{{ "%.2f"|format(day_total) }} TL</span>
+    </div>
+</section>
+{% endif %}
 
 {% if parsed %}
-<pre>{{ parsed | tojson(indent=2) }}</pre>
+<section class="card highlight">
+    <h3>Son Eklenen Fiş</h3>
+    <p><b>Fiş No:</b> {{ parsed.receipt_no }}</p>
+    <p><b>Total:</b> {{ parsed.total }} TL</p>
+</section>
 {% endif %}
+
+<div class="action-row">
+    <a href="/reset-day" class="btn-danger">🔄 Günü Sıfırla</a>
+</div>
+
+{% endblock %}
